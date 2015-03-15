@@ -19,7 +19,7 @@ if connect.ok:
 
     print json_response['mfa'][0] # Should be something like "What's your mother's maiden name?"
 
-    step = client.step(account_type='bofa', mfa='Smith')
+    step = client.connect_step(account_type='bofa', mfa='Smith')
     if step.ok:
         transactions = json.loads(step.content)
         # ...
